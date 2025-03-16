@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations, getPathWithLang, getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t('nav.about')} | ${t('site.title')}`} description={t('about.description')}>
+  <main class="container mx-auto px-4 py-8">
+    <div class="relative">
+      <div class="absolute inset-0 -z-10 transform-gpu overflow-hidden blur-3xl">
+        <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary to-secondary opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+      </div>
+      <div class="relative">
+        <div class="text-center mb-12">
+          <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent drop-shadow-sm">
+            {t('about.title')}
+          </h1>
+          <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+            {t('about.description')}
+          </p>
+        </div>
+        
+        <div class="mt-8 p-6 rounded-lg bg-gradient-to-r from-destructive/10 to-destructive/5 shadow-md mb-12">
+          <p class="text-center text-destructive font-medium">{t('about.warning')}</p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+          <section class="mb-12 p-6 rounded-lg bg-card shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-primary">{t('about.company.title')}</h2>
+            <p class="mb-6">{t('about.company.description')}</p>
+            
+            <h3 class="text-xl font-semibold mb-3 text-primary">{t('about.company.mission_title')}</h3>
+            <p class="mb-6">{t('about.company.mission')}</p>
+            
+            <h3 class="text-xl font-semibold mb-3 text-primary">{t('about.company.founders_title')}</h3>
+            <p class="mb-6">{t('about.company.founders')}</p>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div class="p-4 rounded-lg bg-accent/20">
+                <h4 class="font-semibold mb-2">Rasang</h4>
+                <p>{t('about.company.founder1_bio')}</p>
+              </div>
+              <div class="p-4 rounded-lg bg-accent/20">
+                <h4 class="font-semibold mb-2">Anirudh</h4>
+                <p>{t('about.company.founder2_bio')}</p>
+              </div>
+            </div>
+            
+            <div class="text-center mt-8">
+              <p class="text-lg font-medium text-primary mb-2">{t('about.company.tagline')}</p>
+              <p class="text-sm text-muted-foreground">{t('about.company.contact')}</p>
+              <a href="https://atomicasher.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mt-4 shadow-md hover:shadow-lg">
+                {t('about.company.website')}
+              </a>
+            </div>
+          </section>
+          
+          <div class="text-center">
+            <a href={getPathWithLang('', lang)} class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 shadow-sm hover:shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-2">
+                <path d="m12 19-7-7 7-7"></path>
+                <path d="M19 12H5"></path>
+              </svg>
+              {t('nav.back')}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout> 

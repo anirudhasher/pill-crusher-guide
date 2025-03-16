@@ -1,0 +1,65 @@
+---
+import { languages } from '../i18n/utils';
+
+interface Props {
+  currentLang: string;
+}
+
+const { currentLang } = Astro.props;
+---
+
+<div class="relative">
+  <button id="language-selector" class="inline-flex items-center justify-center rounded-md text-sm font-medium border border-input bg-background px-3 py-1.5 hover:bg-accent transition-colors">
+    <span>{languages[currentLang as keyof typeof languages]}</span>
+    <svg class="ml-1 h-3.5 w-3.5 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+    </svg>
+  </button>
+  <div id="language-dropdown" class="absolute right-0 mt-1 w-40 rounded-md border bg-background shadow-lg hidden z-50 overflow-hidden">
+    <div class="p-1">
+      {Object.entries(languages).map(([code, label]) => {
+        const currentPath = Astro.url.pathname;
+        // Get the current route without the language prefix
+        const route = currentPath.replace(/^\/[^\/]+/, '');
+        // Create the new path with the selected language
+        let newPath;
+        if (code === 'en') {
+          // For English, use the route directly or just '/' for home
+          newPath = route || '/';
+          // If the route is empty, use '/' instead of ''
+          if (newPath === '') newPath = '/';
+        } else {
+          // For other languages, prefix with language code
+          newPath = `/${code}${route}`;
+        }
+        
+        return (
+          <a 
+            href={newPath} 
+            class={`flex items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-accent transition-colors ${code === currentLang ? 'bg-accent/50 font-medium text-primary' : ''}`}
+          >
+            {label}
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</div>
+
+<script>
+  const button = document.getElementById('language-selector');
+  const dropdown = document.getElementById('language-dropdown');
+
+  if (button && dropdown) {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!button.contains(e.target as Node)) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  }
+</script> 

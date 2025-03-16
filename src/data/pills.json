@@ -1,47 +1,152 @@
 [
   {
     "id": "paracetamol-500mg",
-    "name": "Paracetamol 500mg",
-    "brand": "Crocin",
+    "name": {
+      "en": "Paracetamol 500mg",
+      "hi": "पैरासिटामोल 500 मिग्रा",
+      "ta": "பாராசிட்டமால் 500 மி.கிரா"
+    },
+    "brand": {
+      "en": "Crocin",
+      "hi": "क्रोसिन",
+      "ta": "க்ரோசின்"
+    },
     "canCrush": true,
-    "alternatives": ["Paracetamol Syrup"],
-    "notes": "Can be crushed and mixed with water or soft food.",
-    "image": "/images/pills/paracetamol.webp"
+    "alternatives": {
+      "en": ["Paracetamol Syrup"],
+      "hi": ["पैरासिटामोल सिरप"],
+      "ta": ["பாராசிட்டமால் சிரப்"]
+    },
+    "notes": {
+      "en": "Can be crushed and mixed with water or soft food.",
+      "hi": "इसे पानी या नरम भोजन के साथ मिलाकर कुचला जा सकता है।",
+      "ta": "தண்ணீர் அல்லது மிருதுவான உணவுடன் கலக்கக் கூடியது."
+    },
+    "image": "/images/pills/paracetamol.svg"
   },
   {
     "id": "atorvastatin-10mg",
-    "name": "Atorvastatin 10mg",
-    "brand": "Atorva",
+    "name": {
+      "en": "Atorvastatin 10mg",
+      "hi": "अटोरवास्टैटिन 10 मिग्रा",
+      "ta": "அட்டோர்வஸ்டாட்டின் 10 மி.கிரா"
+    },
+    "brand": {
+      "en": "Atorva",
+      "hi": "अटोर्वा",
+      "ta": "அட்டோர்வா"
+    },
     "canCrush": false,
-    "alternatives": ["Atorvastatin Oral Suspension"],
-    "notes": "Extended-release formulation. Do not crush as it will affect drug release.",
-    "image": "/images/pills/atorvastatin.webp"
+    "alternatives": {
+      "en": ["Atorvastatin Oral Suspension"],
+      "hi": ["अटोरवास्टैटिन मौखिक सस्पेंशन"],
+      "ta": ["அட்டோர்வஸ்டாட்டின் வாய்மூலம் இரவல்"]
+    },
+    "notes": {
+      "en": "Extended-release formulation. Do not crush as it will affect drug release.",
+      "hi": "विस्तारित-रिलीज फॉर्मूलेशन। कुचले नहीं क्योंकि यह दवा के रिलीज को प्रभावित करेगा।",
+      "ta": "நீண்ட நேர வெளியீடு வடிவம். கிரஷ் செய்ய வேண்டாம், மருந்து வெளியீட்டில் பாதிப்பு ஏற்படும்."
+    },
+    "image": "/images/pills/atorvastatin.svg"
   },
   {
     "id": "metformin-500mg",
-    "name": "Metformin 500mg",
-    "brand": "Glycomet",
+    "name": {
+      "en": "Metformin 500mg",
+      "hi": "मेटफॉर्मिन 500 मिग्रा",
+      "ta": "மெட்போர்மின் 500 மி.கிரா"
+    },
+    "brand": {
+      "en": "Glycomet",
+      "hi": "ग्लाइकोमेट",
+      "ta": "கிளைகோமெட்"
+    },
     "canCrush": true,
-    "alternatives": ["Metformin Liquid"],
-    "notes": "Regular tablets can be crushed. Do not crush extended-release versions.",
-    "image": "/images/pills/metformin.webp"
+    "alternatives": {
+      "en": ["Metformin Liquid"],
+      "hi": ["मेटफॉर्मिन लिक्विड"],
+      "ta": ["மெட்போர்மின் திரவம்"]
+    },
+    "notes": {
+      "en": "Regular tablets can be crushed. Do not crush extended-release versions.",
+      "hi": "नियमित टैबलेट को कुचला जा सकता है। विस्तारित-रिलीज संस्करण को न कुचलें।",
+      "ta": "சாதாரண மாத்திரைகள் கிரஷ் செய்யலாம். நீண்ட வெளியீட்டைக் கிரஷ் செய்ய வேண்டாம்."
+    },
+    "image": "/images/pills/metformin.svg"
   },
   {
     "id": "amlodipine-5mg",
-    "name": "Amlodipine 5mg",
-    "brand": "Amlong",
+    "name": {
+      "en": "Amlodipine 5mg",
+      "hi": "एम्लोडिपिन 5 मिग्रा",
+      "ta": "அம்லோடிபின் 5 மி.கிரா"
+    },
+    "brand": {
+      "en": "Amlong",
+      "hi": "एमलॉन्ग",
+      "ta": "அம்லோங்"
+    },
     "canCrush": true,
-    "alternatives": ["Amlodipine Oral Solution"],
-    "notes": "Can be crushed and mixed with water.",
-    "image": "/images/pills/amlodipine.webp"
+    "alternatives": {
+      "en": ["Amlodipine Oral Solution"],
+      "hi": ["एम्लोडिपिन मौखिक घोल"],
+      "ta": ["அம்லோடிபின் வாய்மூலம் தீர்வு"]
+    },
+    "notes": {
+      "en": "Can be crushed and mixed with water.",
+      "hi": "इसे पानी के साथ मिलाकर कुचला जा सकता है।",
+      "ta": "தண்ணீருடன் கலக்கி கிரஷ் செய்யலாம்."
+    },
+    "image": "/images/pills/amlodipine.svg"
   },
   {
     "id": "pantoprazole-40mg",
-    "name": "Pantoprazole 40mg",
-    "brand": "Pan-40",
+    "name": {
+      "en": "Pantoprazole 40mg",
+      "hi": "पैंटोप्राज़ोल 40 मिग्रा",
+      "ta": "பாண்டோப்ராசோல் 40 மி.கிரா"
+    },
+    "brand": {
+      "en": "Pan-40",
+      "hi": "पैन-40",
+      "ta": "பேன்-40"
+    },
     "canCrush": false,
-    "alternatives": ["Pantoprazole Suspension"],
-    "notes": "Enteric-coated. Do not crush as it will destroy the coating designed to protect the stomach.",
-    "image": "/images/pills/pantoprazole.webp"
+    "alternatives": {
+      "en": ["Pantoprazole Suspension"],
+      "hi": ["पैंटोप्राज़ोल सस्पेंशन"],
+      "ta": ["பாண்டோப்ராசோல் சஸ்பென்ஷன்"]
+    },
+    "notes": {
+      "en": "Enteric-coated. Do not crush as it will destroy the coating designed to protect the stomach.",
+      "hi": "एंटेरिक-कोटेड। कुचले नहीं, कोटिंग नष्ट हो जाएगी जो पेट की सुरक्षा करती है।",
+      "ta": "உள் மூடியது. கிரஷ் செய்ய வேண்டாம், வயிற்றை பாதுகாக்கும் மூடியை அழிக்கலாம்."
+    },
+    "image": "/images/pills/pantoprazole.svg"
+  },
+  {
+    "id": "ibuprofen-200mg",
+    "name": {
+      "en": "Ibuprofen 200mg",
+      "hi": "इबुप्रोफेन 200 मिग्रा",
+      "ta": "இபுபுரோபென் 200 மி.கிரா"
+    },
+    "brand": {
+      "en": "Brufen",
+      "hi": "ब्रुफेन",
+      "ta": "புரூபென்"
+    },
+    "canCrush": true,
+    "alternatives": {
+      "en": ["Ibuprofen Suspension"],
+      "hi": ["इबुप्रोफेन सस्पेंशन"],
+      "ta": ["இபுபுரோபென் திரவம்"]
+    },
+    "notes": {
+      "en": "Crush only if immediate-release tablets; avoid crushing extended-release tablets.",
+      "hi": "केवल तात्कालिक रिलीज़ टैबलेट को कुचला जाए; विस्तारित रिलीज़ टैबलेट से बचें।",
+      "ta": "உடனடி வெளியீடு மாத்திரையை மட்டுமே கிரஷ் செய்யவும்; நீண்ட வெளியீட்டை தவிர்க்கவும்."
+    },
+    "image": "/images/pills/ibuprofen.svg"
   }
-] 
+]

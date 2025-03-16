@@ -1,0 +1,13 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="200" fill="#4ade80" rx="20" ry="20" />
+    <circle cx="100" cy="100" r="70" fill="white" opacity="0.8" />
+    <text x="100" y="90" font-family="Arial" font-size="16" text-anchor="middle" fill="#166534">
+      Paracetamol
+    </text>
+    <text x="100" y="110" font-family="Arial" font-size="16" text-anchor="middle" fill="#166534">
+      500mg
+    </text>
+    <text x="100" y="140" font-family="Arial" font-size="14" text-anchor="middle" fill="#166534">
+      Safe to Crush
+    </text>
+  </svg>

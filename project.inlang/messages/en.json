@@ -1,0 +1,41 @@
+{
+  "site": {
+    "title": "Pill Crusher Guide",
+    "description": "Find out if your medication can be crushed safely"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "back": "Back to Home"
+  },
+  "pill": {
+    "safe": "Safe to Crush",
+    "unsafe": "Do Not Crush",
+    "notes": "Notes",
+    "alternatives": "Alternatives"
+  },
+  "search": {
+    "placeholder": "Search for a medication..."
+  },
+  "about": {
+    "title": "About This Guide",
+    "description": "This guide provides information about which pills can be safely crushed for patients who have difficulty swallowing. Always consult with a healthcare professional before crushing any medication.",
+    "warning": "WARNING: Crushing certain medications can be dangerous. Always check with your doctor or pharmacist first.",
+    "company": {
+      "title": "About Atomic Asher LLP",
+      "description": "Atomic Asher LLP is a technology company focused on creating accessible healthcare solutions. We believe in leveraging technology to solve real-world problems and improve quality of life.",
+      "mission_title": "Our Mission",
+      "mission": "Our mission with the Pill Crusher Guide is to help people who have difficulty swallowing medications make informed decisions. This project was inspired by our own experiences with family and friends who struggle with pill dysphagia.",
+      "founders_title": "Meet the Founders",
+      "founders": "Founded by Rasang and Anirudh, Atomic Asher LLP combines healthcare expertise with technological innovation to create practical solutions for everyday challenges.",
+      "founder1_bio": "Co-founder with expertise in healthcare technology and product development. Passionate about creating accessible solutions for common healthcare challenges.",
+      "founder2_bio": "Co-founder with a background in technology and healthcare innovation. Driven by personal experiences to improve medication accessibility.",
+      "website": "Visit our website",
+      "tagline": "Technology for better healthcare",
+      "contact": "For inquiries, please visit our website or contact us at info@atomicasher.com"
+    }
+  },
+  "footer": {
+    "disclaimer": "All Rights Reserved. This information is for educational purposes only."
+  }
+} 

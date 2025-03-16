@@ -1,0 +1,61 @@
+---
+import { getLangFromUrl, useTranslations, getPathWithLang } from '../i18n/utils';
+
+export interface Props {
+  id: string;
+  name: {
+    en: string;
+    hi: string;
+    [key: string]: string | undefined;
+  };
+  brand: {
+    en: string;
+    hi: string;
+    [key: string]: string | undefined;
+  };
+  canCrush: boolean;
+  image: string;
+}
+
+const { id, name, brand, canCrush, image } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Fallback to English if the current language is not available
+const displayName = name[lang] || name.en;
+const displayBrand = brand[lang] || brand.en;
+---
+
+<a href={`/${lang}/pill/${id}`} class="pill-card block" data-name={displayName} data-brand={displayBrand}>
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden group">
+    <div class="p-4 flex items-center space-x-4 relative">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div class="flex-shrink-0 relative z-10">
+        <div class={`w-16 h-16 rounded flex items-center justify-center text-white font-bold ${canCrush ? 'bg-green-500' : 'bg-red-500'}`}>
+          {canCrush ? 'SAFE' : 'NO'}
+        </div>
+      </div>
+      <div class="flex-grow relative z-10">
+        <div class="mb-1">
+          <span class="text-xs text-muted-foreground">{t('pill.active_ingredient')}:</span>
+          <h3 class="text-base font-semibold">{displayName}</h3>
+        </div>
+        <div>
+          <span class="text-xs text-muted-foreground">{t('pill.brand_name')}:</span>
+          <p class="text-xs text-muted-foreground">{displayBrand}</p>
+        </div>
+      </div>
+      <div class="flex-shrink-0 relative z-10">
+        {canCrush ? (
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+            {t('pill.safe')}
+          </span>
+        ) : (
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-destructive text-destructive-foreground">
+            {t('pill.unsafe')}
+          </span>
+        )}
+      </div>
+    </div>
+  </div>
+</a> 

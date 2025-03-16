@@ -1,0 +1,16 @@
+---
+import { getLangFromUrl } from '../../i18n/utils';
+import { pills } from '../../data/pills';
+
+export function getStaticPaths() {
+  return pills.map(pill => ({
+    params: { id: pill.id }
+  }));
+}
+
+const { id } = Astro.params;
+const lang = getLangFromUrl(Astro.url) || 'en';
+
+// Redirect to language-specific pill page
+return Astro.redirect(`/${lang}/pill/${id}`);
+--- 

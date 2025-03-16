@@ -1,0 +1,39 @@
+---
+import { getLangFromUrl, useTranslations, getPathWithLang } from '../i18n/utils';
+
+const currentYear = new Date().getFullYear();
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<footer class="relative mt-16">
+  <div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-secondary/5"></div>
+  <div class="container mx-auto px-4 py-8 text-center relative z-10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <path d="M8 21h8"></path>
+            <path d="M12 21v-6.5a2.5 2.5 0 0 1 5 0V21"></path>
+            <path d="M12 15V3"></path>
+          </svg>
+        </div>
+        <span class="font-semibold text-lg">{t('site.title')}</span>
+      </div>
+      <div class="flex gap-4">
+        <a href={getPathWithLang('', lang)} class="text-sm hover:text-primary transition-colors">{t('nav.home')}</a>
+        <a href={getPathWithLang('about', lang)} class="text-sm hover:text-primary transition-colors">{t('nav.about')}</a>
+        <a href="https://atomicasher.com" target="_blank" rel="noopener noreferrer" class="text-sm hover:text-primary transition-colors">Atomic Asher</a>
+      </div>
+    </div>
+    <div class="border-t pt-6">
+      <p class="text-muted-foreground">© {currentYear} {t('site.title')}. {t('footer.disclaimer')}</p>
+      <p class="mt-2 text-sm text-destructive">{t('about.warning')}</p>
+      <div class="mt-4 flex justify-center gap-4 text-xs text-muted-foreground">
+        <a href={getPathWithLang('privacy', lang)} class="hover:text-primary transition-colors">Privacy Policy</a>
+        <span>|</span>
+        <a href={getPathWithLang('terms', lang)} class="hover:text-primary transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer> 

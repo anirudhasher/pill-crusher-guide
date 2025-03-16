@@ -1,39 +1,97 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/globals.css';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 export interface Props {
-	title: string;
-	description?: string;
+  title: string;
+  description?: string;
 }
 
 const { title, description = "Find out if your medication can be crushed safely - Indian Pill Crusher Guide" } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
-		<title>{title}</title>
-	</head>
-	<body class="min-h-screen bg-gray-50 flex flex-col">
-		<Header />
-		<main class="flex-grow container mx-auto px-4 py-8">
-			<slot />
-		</main>
-		<Footer />
-	</body>
-</html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="stylesheet" href="https://unpkg.com/intro.js/minified/introjs.min.css" />
+  </head>
+  <body class="min-h-screen bg-background flex flex-col">
+    <Header />
+    <main class="flex-grow container mx-auto px-4 py-8">
+      <slot />
+      <div class="mt-4 p-4 bg-destructive/10 border border-destructive rounded-md">
+        <p class="text-destructive font-medium">{t('about.warning')}</p>
+      </div>
+    </main>
+    <Footer />
+    <!-- Initialize Intro.js for disclaimer tour -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Check if this is the first visit (using localStorage)
+        const hasSeenDisclaimer = localStorage.getItem('hasSeenDisclaimer');
+        
+        // For testing: uncomment to reset the disclaimer
+        // localStorage.removeItem('hasSeenDisclaimer');
+        
+        if (!hasSeenDisclaimer) {
+          // Import Intro.js dynamically
+          import('intro.js').then((introJs) => {
+            const intro = introJs.default();
+            
+            intro.setOptions({
+              steps: [
+                {
+                  element: document.querySelector('main'),
+                  intro: 'This website is for educational purposes only. Always consult with a healthcare professional before making any decisions about your medication.',
+                  position: 'bottom'
+                },
+                {
+                  element: document.querySelector('main'),
+                  intro: 'We are not responsible for any health issues that may arise from using information on this site. Use at your own risk.',
+                  position: 'bottom'
+                },
+                {
+                  element: document.querySelector('main'),
+                  intro: 'Never disregard professional medical advice because of something you have read on this website.',
+                  position: 'bottom'
+                },
+                {
+                  element: document.querySelector('main'),
+                  intro: 'WARNING: Crushing certain medications can be dangerous. Always check with your doctor or pharmacist first.',
+                  position: 'bottom'
+                }
+              ],
+              showBullets: true,
+              showProgress: true,
+              exitOnOverlayClick: false,
+              exitOnEsc: false,
+              disableInteraction: true
+            });
+            
+            // Start the intro
+            intro.start();
+            
+            // Mark that the user has seen the disclaimer
+            intro.oncomplete(function() {
+              localStorage.setItem('hasSeenDisclaimer', 'true');
+            });
+            
+            intro.onexit(function() {
+              localStorage.setItem('hasSeenDisclaimer', 'true');
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html> 
