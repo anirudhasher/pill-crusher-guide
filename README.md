@@ -1,4 +1,5 @@
 # Pill Crusher Guide
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1f2d0f43-9010-49a2-a4b8-47956788a672/deploy-status)](https://app.netlify.com/sites/pill-crush-guide/deploys)
 
 A web application that helps users determine which medications can be safely crushed for patients who have difficulty swallowing pills.
 
