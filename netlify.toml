@@ -1,0 +1,29 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# Redirect root to English version
+[[redirects]]
+  from = "/"
+  to = "/en"
+  status = 302
+  force = true
+
+# Handle language paths
+[[redirects]]
+  from = "/:lang"
+  to = "/:lang"
+  status = 200
+  conditions = {Language = ["en", "hi", "ta"]}
+
+# Handle 404s
+[[redirects]]
+  from = "/*"
+  to = "/en/404"
+  status = 404
+
+# SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/en"
+  status = 200 
