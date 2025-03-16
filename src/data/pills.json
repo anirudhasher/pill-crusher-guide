@@ -1,0 +1,47 @@
+[
+  {
+    "id": "paracetamol-500mg",
+    "name": "Paracetamol 500mg",
+    "brand": "Crocin",
+    "canCrush": true,
+    "alternatives": ["Paracetamol Syrup"],
+    "notes": "Can be crushed and mixed with water or soft food.",
+    "image": "/images/pills/paracetamol.webp"
+  },
+  {
+    "id": "atorvastatin-10mg",
+    "name": "Atorvastatin 10mg",
+    "brand": "Atorva",
+    "canCrush": false,
+    "alternatives": ["Atorvastatin Oral Suspension"],
+    "notes": "Extended-release formulation. Do not crush as it will affect drug release.",
+    "image": "/images/pills/atorvastatin.webp"
+  },
+  {
+    "id": "metformin-500mg",
+    "name": "Metformin 500mg",
+    "brand": "Glycomet",
+    "canCrush": true,
+    "alternatives": ["Metformin Liquid"],
+    "notes": "Regular tablets can be crushed. Do not crush extended-release versions.",
+    "image": "/images/pills/metformin.webp"
+  },
+  {
+    "id": "amlodipine-5mg",
+    "name": "Amlodipine 5mg",
+    "brand": "Amlong",
+    "canCrush": true,
+    "alternatives": ["Amlodipine Oral Solution"],
+    "notes": "Can be crushed and mixed with water.",
+    "image": "/images/pills/amlodipine.webp"
+  },
+  {
+    "id": "pantoprazole-40mg",
+    "name": "Pantoprazole 40mg",
+    "brand": "Pan-40",
+    "canCrush": false,
+    "alternatives": ["Pantoprazole Suspension"],
+    "notes": "Enteric-coated. Do not crush as it will destroy the coating designed to protect the stomach.",
+    "image": "/images/pills/pantoprazole.webp"
+  }
+] 
